@@ -6,7 +6,9 @@ This is my configuration for use with [GDB Dashboard](https://github.com/cyrus-a
 
 ### tmux
 
-Does not require but is really nice with `tmux`. If you want mouse scrolling in the debugger, you can add `setw -g mouse on` to your `.tmux.conf` (for `tmux` < 2.1, use `setw -g mode-mouse on` instead). `tmux` can make the screen two side-by-side panes if you invoke GDB with the `gdb-tmux.sh` script. The `gdb-tmux-vertical.sh` script runs the debugger with a vertical split instead. I suggest symlinking it under somewhere in your path. I also added `alias gdbh="gdb-tmux"` and `alias gdbv="gdb-tmux-vertical"` to my `.bashrc` in my home directory.
+Does not require but is really nice with tmux. If you want mouse scrolling in the debugger, you can add `setw -g mouse on` to your `.tmux.conf` (for `tmux` < 2.1, use `setw -g mode-mouse on` instead). tmux can make the screen two side-by-side panes if you invoke GDB with the `gdb-tmux.sh` script. The `gdb-tmux-vertical.sh` script runs the debugger with a vertical split instead. I suggest symlinking it under somewhere in your path. I also added `alias gdbh="gdb-tmux"` and `alias gdbv="gdb-tmux-vertical"` to my `.bashrc` in my home directory.
+
+**Note:** The tmux scripts have some limitations; namely they only work as intended if you invoke GDB with no arguments or with a binary as its sole argument. I also do not recommend aliasing `gdb` to either of the scripts because the scripts themselves call GDB.
 
 ### GDB
 
